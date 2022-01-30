@@ -1,9 +1,9 @@
 <%-- 
     Document   : editnote
     Created on : Jan 30, 2022, 11:08:13 AM
-    Author     : mbibe
+    Author     : Yoonju Baek
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,11 +17,11 @@
         <form action="note" method="post">
             <div>
                 <label for="title">Title:</label>
-                <input type="text" id="title" name="title" placeholder="Title">
+                <input type="text" id="title" name="title" placeholder="Title" value="${note.title}">
             </div>
             <div>
                 <label id="contents">Contents:</label>
-                <textarea id="contents" name="contents" placeholder="Contents"></textarea>
+                <textarea rows="6" id="contents" name="contents" placeholder="Contents"><c:out value="${note.contents}"/></textarea>
             </div>
             <button type="submit">Save</button>
         </form>
